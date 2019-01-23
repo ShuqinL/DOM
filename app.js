@@ -104,14 +104,19 @@ link.setAttribute("style","color:white;");
 //selecteer het eerste 'ol' element
 let ol1=document.getElementsByTagName("ol")[0];
 
-//lus over alle kinderen van de laatste dankzij de children eigendom
+//selecteer alle 'li' elementen van deze 'ol' dankzij de children eigendom
+let liElements=ol1.children;
 
 //verwijder elk kind van ol dankzij removeChild()
+for(var i=0; i<liElements.length;i++){
+    ol1.removeChild(liElements[i]);
+}
 
-//Geef in een array de volgende waarden op: ["Silent Teacher","Code Monkey", "CodeCombat"]
 
-//lus alle kinderen in de eerder gecreëerde tafel
+//Maak een array aan met de volgende gegevens: ["Silent Teacher","Code Monkey", "CodeCombat"]
+let newLiElements=["Silent Teacher","Code Monkey", "CodeCombat"];
 
-//creëer voor elke waarde van de array een li element met behulp van document.createElement()
+//plaats elke waarde van de array in een li element
 
-//voeg vervolgens elke link toe aan het eerder geselecteerde a element met als naam de waarde van de array.
+
+//voeg vervolgens elk li element toe aan de eerder leeg gemaakte 'ol'
