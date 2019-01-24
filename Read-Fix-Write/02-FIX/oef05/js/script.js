@@ -6,11 +6,13 @@
 
 const episodes = document.querySelectorAll(`.episode-item`);
 
+// https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
 episodes.forEach(($episode, $number) => {
   const viewers = $episode.querySelector(`.episode-viewers`).textContent;
 
   const $meta =  $episode.querySelector(`.episode-meta`);
     
+  // https://www.digitalocean.com/community/tutorials/how-to-work-with-strings-in-javascript
   $meta.innerHTML = "<a href=\"episode" + $number + ".mp4\">Watch now</a>";
 
   const $air =  $episode.querySelector(`.episode-air`);
