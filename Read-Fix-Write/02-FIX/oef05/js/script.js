@@ -6,14 +6,14 @@
 
 const episodes = document.querySelectorAll(`.episode-item`);
 var $i = 1;
-episodes.forEach($episode => {
+episodes.forEach(($episode,$number) => {
   const viewers = $episode.querySelector(`.episode-viewers`).textContent;
 
   const $meta =  $episode.querySelector(`.episode-meta`);
   console.log("$meta: " + $meta);
   console.log("$i: " + $i);
   
-  $meta.innerHTML = `<span>$i</span>`;//`<a href="episode${i}.mp4">Watch now</a>`;
+  $meta.innerHTML = `<a href="episode${i}.mp4">Watch now</a>`;
 
   const $air =  $episode.querySelector(`.episode-air`);
   if (Date.parse($air)<=Date.now()){
