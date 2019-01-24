@@ -12,7 +12,7 @@ episodes.forEach($episode => {
   const $meta =  $episode.querySelector(`.episode-meta`);
   const $number = $episode.querySelector(`.episode-number`)[i].innerText;
   
-  $meta.innerHTML = i;//`<a href="episode${i}.mp4">Watch now</a>`;
+  $meta.innerHTML = `$i`;//`<a href="episode${i}.mp4">Watch now</a>`;
 
   const $air =  $episode.querySelector(`.episode-air`);
   if (Date.parse($air)<=Date.now()){
