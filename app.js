@@ -105,12 +105,15 @@ link.setAttribute("style","color:white;");
 let ol1=document.getElementsByTagName("ol")[0];
 
 //selecteer alle 'li' elementen van deze 'ol' dankzij de children eigendom
-let liElements=ol1.children;
+// let liElements=ol1.children;
 
 //verwijder elk kind van ol dankzij removeChild()
-for(var i=0; i<liElements.length;i++){
-    ol1.removeChild(liElements[i]);
+while(ol1.hasChildNodes()){
+    ol1.removeChild(ol1.lastChild);
 }
+/* for(var i=0; i<liElements.length;i++){
+    ol1.removeChild(liElements[i]);
+} */
 
 
 //Maak een array aan met de volgende gegevens: ["Silent Teacher","Code Monkey", "CodeCombat"]
@@ -118,5 +121,15 @@ let newLiElements=["Silent Teacher","Code Monkey", "CodeCombat"];
 
 //plaats elke waarde van de array in een li element
 
-
+for(var i=0; i<newLiElements.length;i++){
+    var newList= document.createElement("LI");
+    // var newNode=document.createTextNode(newLiElements[i]);
+    // newList.textContent = `${newLiElements[i]}`
+    // newList.appendChild(newNode);
+    // console.log(newList)
+    newList.appendChild(document.createTextNode(newLiElements[i]))
+  
 //voeg vervolgens elk li element toe aan de eerder leeg gemaakte 'ol'
+   ol1.appendChild(newList);  
+}
+
