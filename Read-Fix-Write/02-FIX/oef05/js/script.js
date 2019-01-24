@@ -10,9 +10,9 @@ episodes.forEach($episode => {
   const viewers = $episode.querySelector(`.episode-viewers`).textContent;
 
   const $meta =  $episode.querySelector(`.episode-meta`);
-  const $number = $episode.querySelector(`.episode-number`)[0].innerText;
+  console.log("$meta: " + $meta);
   console.log("$i: " + i);
-  console.log("$number: " + number);
+  console.log("$number: " + $number);
   $meta.innerHTML = `$i` + `$number`;//`<a href="episode${i}.mp4">Watch now</a>`;
 
   const $air =  $episode.querySelector(`.episode-air`);
