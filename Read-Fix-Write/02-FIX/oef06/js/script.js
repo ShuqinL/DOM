@@ -1,12 +1,15 @@
 //Toon in de console alle titels van de afleveringen, maar wel alfabetisch gesorteerd.
 
 const episodes = document.querySelectorAll(`.episode-title`);
+/* let title=*/
+console.log(episodes.sort()); 
 
+/*  
 for(var i=0;i<episodes.length;i++){
-  console.log(episodes[i]);
+  let title = episodes[i].charAt("13");
+  console.log(title);
 }
-
-
+  */
 
 
 /* const episodes = document.querySelectorAll(`.episode-item`);
