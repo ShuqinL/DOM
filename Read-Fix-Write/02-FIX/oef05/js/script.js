@@ -13,7 +13,7 @@ episodes.forEach(($episode, $number) => {
   const $meta =  $episode.querySelector(`.episode-meta`);
     
   // https://www.digitalocean.com/community/tutorials/how-to-work-with-strings-in-javascript
-  $meta.innerHTML = "<a href=\"episode" + （$number＋1）+ ".mp4\">Watch now</a>";
+  $meta.innerHTML = "<a href=\"episode" + $number+ ".mp4\">Watch now</a>";
 
   const $air =  $episode.querySelector(`.episode-air`);
   if (Date.parse($air)<=Date.now()){
