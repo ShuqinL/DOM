@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BeCode Antwerpen</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.0/dist/paper.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+ <style>
+   #reset :hover{
+     background-color:yellowgreen;
+ }
+
+ </style>
+
+</head>
+
+<body class="paper container">
+  <header class="child-borders">
+
+
+       <h1 class="hidden">BeCode Antwerpen</h1>
+    
+
+  
+    <!--    reset div -->
+    <div id="reset">
+
+    <nav class="border fixed split-nav">
+      <h2 class="hidden">Navigation</h2>
+      <form class="nav-search">
+        <input type="text" id="search" placeholder="find episode">
+      </form>
+      <div class="collapsible">
+        <input id="collapsible1" type="checkbox" name="collapsible1">
+        <button>
+        <label for="collapsible1">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+          </label>
+        </button>
+        <div class="collapsible-body">
+          <ul class="inline">
+            <li class="nav-item"><a class="nav-link" href="#">EPISODES</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">TALK</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">CAST &amp; CREW</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">ABOUT</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+<!--   div one -->
+    <div class="episode-short row hoverMe">
+        <p class="episode col-12">Season 1, Episode 3</p>
+        <h2 class="subtitle col-12">"The one with control structures"</h2>
+        <a hrefcol class="paper-btn button">watch episode</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="child-borders">
+
+    <!--   div two -->
+      <div class="hoverMe">
+         <h2 class="season-title">Season 1</h2>
+      </div>
+    <!--   div three -->
+    <div class="hoverMe">
+      <ul class="episode-list child-borders padding-small">
+        <li class="episode-item row"><span class="episode-number col">1</span><span class="episode-title sm-12 md-4 col">"The one with variables"</span><span class="episode-meta sm-12 md-6 col row"><span class="episode-director col-4">Hedy Lamarr</span><span class="episode-writer col-4">Hedy Lamarr</span><span class="episode-air col-3">Januari 15, 2019</span><span class="episode-viewers col-1">17M</span></span></li>
+        <li class="episode-item row"><span class="episode-number col">2</span><span class="episode-title sm-12 md-4 col">"The one with operators"</span><span class="episode-meta sm-12 md-6 col row"><span class="episode-director col-4">Hedy Lamarr</span><span class="episode-writer col-4">Hedy Lamarr</span><span class="episode-air col-3">Januari 16, 2019</span><span class="episode-viewers col-1">12M</span></span></li>
+        <li class="episode-item row"><span class="episode-number col">3</span><span class="episode-title sm-12 md-4 col">"The one with control structures"</span><span class="episode-meta sm-12 md-6 col row"><span class="episode-director col-4">Hedy Lamarr</span><span class="episode-writer col-4">Hedy Lamarr</span><span class="episode-air col-3">Januari 17, 2019</span><span class="episode-viewers col-1">12M</span></span></li>
+        <li class="episode-item row"><span class="episode-number col">4</span><span class="episode-title sm-12 md-4 col">"The one with arrays"</span><span class="episode-meta sm-12 md-6 col row"><span class="episode-director col-4">Hedy Lamarr</span><span class="episode-writer col-4">Hedy Lamarr</span><span class="episode-air col-3">Januari 28, 2019</span><span class="episode-viewers col-1">TB</span></span></li>
+        <li class="episode-item row"><span class="episode-number col">5</span><span class="episode-title sm-12 md-4 col">"The one with functions"</span><span class="episode-meta sm-12 md-6 col row"><span class="episode-director col-4">Hedy Lamarr</span><span class="episode-writer col-4">Hedy Lamarr</span><span class="episode-air col-3">Februari 1, 2019</span><span class="episode-viewers col-1">TB</span></span></li>
+      </ul>
+    </div>
+    </section>
+  </main>
+
+  <footer class="row">
+
+    <div id="x-axis" class="col-6">
+
+    </div>
+
+    <div id="y-axis" class="col-6">
+      
+    </div>
+
+  </footer>
+
+
+  <script>
+  
+/* Oefeningen 1
+Maak (in HTML) 3 DIV met dezelfde "hoverMe" klasse
+Laat de divs verdwijnen als je met de muis over de divs beweegt
+Tip: maak gebruik van het mouseenter of muisover. */
+
+   let divs=document.querySelectorAll(".hoverMe");
+
+      divs.forEach(($div)=>{
+
+        $div.addEventListener("mouseenter",mouseEnter);
+      /*   $div.addEventListener("mouseleave",mouseLeave); */
+
+        function mouseEnter(){
+          $div.style.display="none";
+        }
+    /*     function mouseLeave(){
+          $div.style.display="block";
+        } */
+
+       })
+  
+/* Oefeningen 2
+Maak (in HTML) een DIV met een reset id
+Zorg ervoor dat wanneer je erop klikt, de 3 divs die je eerst hebt gemaakt weer verschijnen
+Tip: met een animatie zou het echt wel cool zijn
+ */
+
+divs.forEach(($div)=>{
+  document.getElementById("reset").addEventListener("click",clickDiv);
+ function clickDiv(){
+  $div.style.display="block";
+}
+})
+
+/* Oefeningen 3
+Maak (in HTML) 2 DIV met één id per div x-axis en y-axis.
+Zorg ervoor dat wanneer u de muis in het venster beweegt, de positie van de muis wordt weergegeven in de bijbehorende divs
+Tip: Gebruik de ontvangen event als argument/parameter. Tip: Gebruik innerHTML of innerText.   */
+
+document.body.addEventListener("mousemove",getCoordinates);
+function getCoordinates(event){
+  let x=event.screenX;
+  let y=event.screenY;
+  document.getElementById("x-axis").innerHTML = x;
+  document.getElementById("y-axis").innerHTML = y;
+}
+
+
+  </script>
+</body>
+</html>

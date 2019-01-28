@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BeCode Antwerpen</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.0/dist/paper.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <style>
+  
+  .highlight{
+     
+      opacity:0.3; 
+  }
+  </style>
+
+</head>
+
+<body class="paper container">
+  <header class="child-borders">
+
+      
+
+    <nav class="border fixed split-nav">
+      <h2 class="hidden">Navigation</h2>
+      <form class="nav-search">
+        <input type="text" id="search" placeholder="find episode">
+      </form>
+      <div class="collapsible">
+        <input id="collapsible1" type="checkbox" name="collapsible1">
+        <button>
+        <label for="collapsible1">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+          </label>
+        </button>
+        <div class="collapsible-body">
+          <ul class="inline">
+            <li class="nav-item"><a class="nav-link" href="#">EPISODES</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">TALK</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">CAST &amp; CREW</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">ABOUT</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+   
+    <h1 >BeCode Antwerpen</h1>
+ 
+    <div class="episode-short row  ">
+        <p class="episode col-12">Season 1, Episode 3</p>
+        <h2 class="subtitle col-12">"The one with control structures"</h2>
+        <a hrefcol class="paper-btn button">watch episode</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="child-borders">
+
+     
+         <h2 class="season-title">Season 1</h2>
+       
+    <div id="character">
+      <ul class="episode-list child-borders padding-small">
+        <li class="episode-item row"><span class="episode-number col">1</span><span class="episode-title sm-12 md-4 col">"The one with variables"</span><span class="episode-meta sm-12 md-6 col row"><span class="episode-director col-4">Hedy Lamarr</span><span class="episode-writer col-4">Hedy Lamarr</span><span class="episode-air col-3">Januari 15, 2019</span><span class="episode-viewers col-1">17M</span></span></li>
+        <li class="episode-item row"><span class="episode-number col">2</span><span class="episode-title sm-12 md-4 col">"The one with operators"</span><span class="episode-meta sm-12 md-6 col row"><span class="episode-director col-4">Hedy Lamarr</span><span class="episode-writer col-4">Hedy Lamarr</span><span class="episode-air col-3">Januari 16, 2019</span><span class="episode-viewers col-1">12M</span></span></li>
+        <li class="episode-item row"><span class="episode-number col">3</span><span class="episode-title sm-12 md-4 col">"The one with control structures"</span><span class="episode-meta sm-12 md-6 col row"><span class="episode-director col-4">Hedy Lamarr</span><span class="episode-writer col-4">Hedy Lamarr</span><span class="episode-air col-3">Januari 17, 2019</span><span class="episode-viewers col-1">12M</span></span></li>
+        <li class="episode-item row"><span class="episode-number col">4</span><span class="episode-title sm-12 md-4 col">"The one with arrays"</span><span class="episode-meta sm-12 md-6 col row"><span class="episode-director col-4">Hedy Lamarr</span><span class="episode-writer col-4">Hedy Lamarr</span><span class="episode-air col-3">Januari 28, 2019</span><span class="episode-viewers col-1">TB</span></span></li>
+        <li class="episode-item row"><span class="episode-number col">5</span><span class="episode-title sm-12 md-4 col">"The one with functions"</span><span class="episode-meta sm-12 md-6 col row"><span class="episode-director col-4">Hedy Lamarr</span><span class="episode-writer col-4">Hedy Lamarr</span><span class="episode-air col-3">Februari 1, 2019</span><span class="episode-viewers col-1">TB</span></span></li>
+      </ul>
+    </div>
+    </section>
+  </main>
+
+<div id="exercise2" style="text-align: center;margin:5px;border:2px solid">
+  <div class="row">
+      <div id="up" class="col-12"><p>UP</p></div>
+  </div>  
+  
+  <div class="row">
+        <div id="left" class="col-6"><p>LEFT</p></div>
+        <div id="right" class="col-6"><p>RIGHT</p></div>
+  </div>
+
+  <div class="row">
+        <div id="down" class="col-12"><p>DOWN</p></div>
+  </div>
+</div>
+
+
+  <script>
+  
+/* Oefening 1
+Maak (in HTML) een DIV met het id "character".
+Wijzig de achtergrondkleur van de DIV telkens als er een cijfertoets van 0 tot 9 wordt ingedrukt op het toetsenbord
+Tip: gebruik de switch. */
+
+document.getElementById("character").addEventListener("keydown", changeBackgroundcolor);
+
+function changeBackgroundcolor(event){
+   switch(event.code){
+       case "Digit0":
+           document.getElementById("character").style.backgroundcolor="red";
+           break;
+       case "Digit1":
+           document.getElementById("character").style.backgroundcolor="orange";
+           break;
+       case "Digit2":
+           document.getElementById("character").style.backgroundcolor="yellow";
+           break;
+        case "Digit3":
+           document.getElementById("character").style.backgroundcolor="green";
+           break;
+        case "Digit4":
+           document.getElementById("character").style.backgroundcolor="blue";
+           break;
+        case "Digit5":
+           document.getElementById("character").style.backgroundcolor="purple";
+           break;
+        case "Digit6":
+           document.getElementById("character").style.backgroundcolor="white";
+           break;
+        case "Digit7":
+           document.getElementById("character").style.backgroundcolor="grey";
+           break;
+        case "Digit8":
+           document.getElementById("character").style.backgroundcolor="black";
+           break;
+        case "Digit9":
+           document.getElementById("character").style.backgroundcolor="yellowgreen";
+         
+   }
+
+}
+
+
+/* Oefening 2
+Maak (in HTML) 4 div met de volgende id's: "up, down, left, right".
+Creëer een highlight class in de CSS die de ondoorzichtigheid van het element vermindert
+Voeg voor elke div de klasse highlight toe wanneer een van de pijltjestoetsen wordt ingedrukt
+Verwijder voor elke div de markeringsklasse wanneer de toets wordt losgelaten
+Tip: Maak de HTML-structuur eerste voordat je met de JavaScript begint.
+ */
+
+
+
+ 
+  </script>
+</body>
+</html>
