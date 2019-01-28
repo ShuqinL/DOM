@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keyboard exercise1</title>
+
+  <style>
+  
+  .highlight{
+      
+      opacity:0.3; 
+  }
+  </style>
+
+</head>
+
+<body >
+
+<div id="character" tabIndex="0">
+
+<h1>Change backgroundcolor</h1>
+
+</div>
+
+
+
+ <script>
+  
+/* Oefening 1
+Maak (in HTML) een DIV met het id "character".
+Wijzig de achtergrondkleur van de DIV telkens als er een cijfertoets van 0 tot 9 wordt ingedrukt op het toetsenbord
+Tip: gebruik de switch. */
+
+document.getElementById("character").addEventListener("keydown", changeBackgroundcolor); 
+
+
+//swith
+function changeBackgroundcolor(event){
+    let key=event.key;
+  
+
+   switch(key){
+       case "0":
+           document.getElementById("character").style.backgroundColor="red";
+           break;
+       case "1":
+           document.getElementById("character").style.backgroundColor="orange";
+           break;
+       case "2":
+           document.getElementById("character").style.backgroundColor="yellow";
+           break;
+        case "3":
+           document.getElementById("character").style.backgroundColor="green";
+           break;
+        case "4":
+           document.getElementById("character").style.backgroundColor="blue";
+           break;
+        case "5":
+           document.getElementById("character").style.backgroundColor="purple";
+           break;
+        case "6":
+           document.getElementById("character").style.backgroundColor="tomato";
+           break;
+        case "7":
+           document.getElementById("character").style.backgroundColor="grey";
+           break;
+        case "8":
+           document.getElementById("character").style.backgroundColor="black";
+           break;
+        case "9":
+           document.getElementById("character").style.backgroundColor="yellowgreen";
+           break;
+        default: 
+           document.getElementById("character").style.backgroundColor="white";
+   }
+
+} 
+
+</script>
+
+</body>
+</html>

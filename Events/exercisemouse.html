@@ -135,7 +135,7 @@ Maak (in HTML) 2 DIV met één id per div x-axis en y-axis.
 Zorg ervoor dat wanneer u de muis in het venster beweegt, de positie van de muis wordt weergegeven in de bijbehorende divs
 Tip: Gebruik de ontvangen event als argument/parameter. Tip: Gebruik innerHTML of innerText.   */
 
-document.body.addEventListener("mousemove",getCoordinates);
+document.addEventListener("mousemove",getCoordinates);
 function getCoordinates(event){
   let x=event.screenX;
   let y=event.screenY;

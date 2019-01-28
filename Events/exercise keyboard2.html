@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.0/dist/paper.css">
+  <title>Keyboard exercise2</title>
+
+  <style>
+  .highlight{  opacity:0.3; }
+  </style>
+
+</head>
+
+<body >
+
+<div id="exercise2" style="text-align: center;margin:5px;border:2px solid">
+  <div class="row">
+      <div id="up" class="col-12"  tabIndex="0"><p>UP</p></div>
+  </div>  
+  
+  <div class="row">
+        <div id="left" class="col-6"><p>LEFT</p></div>
+        <div id="right" class="col-6"><p>RIGHT</p></div>
+  </div>
+
+  <div class="row">
+        <div id="down" class="col-12"><p>DOWN</p></div>
+  </div>
+</div>
+
+
+
+ <script>
+  
+/* Oefening 2
+Maak (in HTML) 4 div met de volgende id's: "up, down, left, right".
+Creëer een highlight class in de CSS die de ondoorzichtigheid van het element vermindert
+Voeg voor elke div de klasse highlight toe wanneer een van de pijltjestoetsen wordt ingedrukt
+Verwijder voor elke div de markeringsklasse wanneer de toets wordt losgelaten
+Tip: Maak de HTML-structuur eerste voordat je met de JavaScript begint.
+ */
+document.addEventListener("keydown", keydown);
+document.addEventListener("keyup", keyup);
+
+let up=document.getElementById("up");
+let left=document.getElementById("left");
+let right=document.getElementById("right");
+let down=document.getElementById("down");
+     
+ function keydown(event){    
+   let key=event.key;
+   switch(key){
+      case 38:
+         up.classList.add("highlight");
+          break;
+      case 37:
+         left.classList.add("highlight");
+          break;
+      case 39:
+         right.classList.add("highlight");
+          break;
+      case 40:
+          down.classList.add("highlight");
+          break;
+   }
+}
+
+  
+function keyup(event){
+    let key=event.key;
+   switch(key){
+      case 38:
+         up.classList.remove("highlight");
+          break;
+      case 37:
+         left.classList.remove("highlight");
+          break;
+      case 39:
+         right.classList.remove("highlight");
+          break;
+      case 40:
+          down.classList.remove("highlight");
+          break;
+   }
+}
+
+
+
+   /*  if(event.key==38){
+        up.classList.add("highlight");
+    } else if (event.key==37){
+        left.classList.add("highlight");
+    } else if (event.key==37){
+        left.classList.add("highlight");
+} */
+
+</script>
+
+</body>
+</html>

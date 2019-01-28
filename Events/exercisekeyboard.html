@@ -10,7 +10,7 @@
   <style>
   
   .highlight{
-     
+      
       opacity:0.3; 
   }
   </style>
@@ -62,7 +62,7 @@
      
          <h2 class="season-title">Season 1</h2>
        
-    <div id="character">
+    <div id="character" tabIndex="0">
       <ul class="episode-list child-borders padding-small">
         <li class="episode-item row"><span class="episode-number col">1</span><span class="episode-title sm-12 md-4 col">"The one with variables"</span><span class="episode-meta sm-12 md-6 col row"><span class="episode-director col-4">Hedy Lamarr</span><span class="episode-writer col-4">Hedy Lamarr</span><span class="episode-air col-3">Januari 15, 2019</span><span class="episode-viewers col-1">17M</span></span></li>
         <li class="episode-item row"><span class="episode-number col">2</span><span class="episode-title sm-12 md-4 col">"The one with operators"</span><span class="episode-meta sm-12 md-6 col row"><span class="episode-director col-4">Hedy Lamarr</span><span class="episode-writer col-4">Hedy Lamarr</span><span class="episode-air col-3">Januari 16, 2019</span><span class="episode-viewers col-1">12M</span></span></li>
@@ -97,43 +97,75 @@ Maak (in HTML) een DIV met het id "character".
 Wijzig de achtergrondkleur van de DIV telkens als er een cijfertoets van 0 tot 9 wordt ingedrukt op het toetsenbord
 Tip: gebruik de switch. */
 
-document.getElementById("character").addEventListener("keydown", changeBackgroundcolor);
+document.getElementById("character").addEventListener("keydown", changeBackgroundcolor); 
 
+//swith
 function changeBackgroundcolor(event){
-   switch(event.code){
-       case "Digit0":
+   switch(event.key){
+       case "0":
            document.getElementById("character").style.backgroundcolor="red";
            break;
-       case "Digit1":
+       case "1":
            document.getElementById("character").style.backgroundcolor="orange";
            break;
-       case "Digit2":
+       case "2":
            document.getElementById("character").style.backgroundcolor="yellow";
            break;
-        case "Digit3":
+        case "3":
            document.getElementById("character").style.backgroundcolor="green";
            break;
-        case "Digit4":
+        case "4":
            document.getElementById("character").style.backgroundcolor="blue";
            break;
-        case "Digit5":
+        case "5":
            document.getElementById("character").style.backgroundcolor="purple";
            break;
-        case "Digit6":
+        case "6":
            document.getElementById("character").style.backgroundcolor="white";
            break;
-        case "Digit7":
+        case "7":
            document.getElementById("character").style.backgroundcolor="grey";
            break;
-        case "Digit8":
+        case "8":
            document.getElementById("character").style.backgroundcolor="black";
            break;
-        case "Digit9":
+        case "9":
            document.getElementById("character").style.backgroundcolor="yellowgreen";
-         
+           break;
    }
 
-}
+} 
+
+// if else
+/* function changeBackgroundcolor(event) {
+
+var x = event.keyCode;   
+
+if (x == 48) {  
+    document.getElementById("character").style.backgroundcolor="red";
+} else if (x == 49) {  
+    document.getElementById("character").style.backgroundcolor="orange";
+} else if (x == 50) {  
+    document.getElementById("character").style.backgroundcolor="yellow";
+} else if (x == 51) {  
+    document.getElementById("character").style.backgroundcolor="yellowgreen";
+} else if (x == 52) {  
+    document.getElementById("character").style.backgroundcolor="green";
+} else if (x == 53) {  
+    document.getElementById("character").style.backgroundcolor="blue";
+} else if (x == 54) {  
+    document.getElementById("character").style.backgroundcolor="purple";
+} else if (x == 55) {  
+    document.getElementById("character").style.backgroundcolor="grey";
+} else if (x == 56) {
+    document.getElementById("character").style.backgroundcolor="black";
+} else if (x == 57) {  
+    document.getElementById("character").style.backgroundcolor="tomato";
+} 
+
+} */
+
+
 
 
 /* Oefening 2
@@ -143,10 +175,21 @@ Voeg voor elke div de klasse highlight toe wanneer een van de pijltjestoetsen wo
 Verwijder voor elke div de markeringsklasse wanneer de toets wordt losgelaten
 Tip: Maak de HTML-structuur eerste voordat je met de JavaScript begint.
  */
+let up=document.getElementById("up");
+  up.addEventListener("keydown", upKeydown);
+function upKeydown(event){
+    if(event.key==38){
+        up.classList.add("highlight");
+    }
+  
+}
+  up.addEventListener("keyup", upKeyup);
+function upKeyup(){
+    if(event.key==38){
+   up.classList.remove("highlight");
+    }
+}
 
-
-
- 
   </script>
 </body>
 </html>
