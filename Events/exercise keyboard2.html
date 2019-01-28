@@ -48,20 +48,22 @@ let up=document.getElementById("up");
 let left=document.getElementById("left");
 let right=document.getElementById("right");
 let down=document.getElementById("down");
+
      
  function keydown(event){    
    let key=event.key;
+
    switch(key){
-      case 38:
+      case "ArrowUp":
          up.classList.add("highlight");
           break;
-      case 37:
+      case "ArrowLeft":
          left.classList.add("highlight");
           break;
-      case 39:
+      case "ArrowRight":
          right.classList.add("highlight");
           break;
-      case 40:
+      case "ArrowDown":
           down.classList.add("highlight");
           break;
    }
@@ -71,30 +73,22 @@ let down=document.getElementById("down");
 function keyup(event){
     let key=event.key;
    switch(key){
-      case 38:
+      case "ArrowUp":
          up.classList.remove("highlight");
           break;
-      case 37:
+      case "ArrowLeft":
          left.classList.remove("highlight");
           break;
-      case 39:
+      case "ArrowRight":
          right.classList.remove("highlight");
           break;
-      case 40:
+      case "ArrowDown":
           down.classList.remove("highlight");
           break;
    }
 }
 
 
-
-   /*  if(event.key==38){
-        up.classList.add("highlight");
-    } else if (event.key==37){
-        left.classList.add("highlight");
-    } else if (event.key==37){
-        left.classList.add("highlight");
-} */
 
 </script>
 
